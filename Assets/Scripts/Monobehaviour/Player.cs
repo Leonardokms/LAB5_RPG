@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : Caractere
 {
@@ -26,6 +27,7 @@ public class Player : Caractere
             if(pontosDano.valor <= float.Epsilon)
             {
                 KillCaractere();
+                SceneManager.LoadScene("Lab5_GameOver");
                 break;
             }
             if(intervalo > float.Epsilon)

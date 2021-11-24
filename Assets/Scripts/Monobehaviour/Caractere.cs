@@ -22,6 +22,6 @@ public abstract class Caractere : MonoBehaviour
 
     public virtual void KillCaractere()
     {
-        Destroy(gameObject);
+        Destroy(gameObject);       
     }
 }
