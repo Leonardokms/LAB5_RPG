@@ -290,7 +290,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -184.49094, y: -308.19824}
+  m_AnchoredPosition: {x: -327, y: -308.19824}
   m_SizeDelta: {x: 325.6195, y: 646.3966}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &135755624
@@ -315,7 +315,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 22
+    m_FontSize: 24
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 0
@@ -326,7 +326,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Integrantes\n\n\n\n\n\n\n\n\nM\xFAsicas"
+  m_Text: "Integrantes\n\n\n\n\n\nM\xFAsicas\n\n\n\n\nSprites"
 --- !u!222 &135755625
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1045,8 +1045,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 260.8383, y: -308.2}
-  m_SizeDelta: {x: 495.6767, y: 646.4}
+  m_AnchoredPosition: {x: 168.38, y: -308.2}
+  m_SizeDelta: {x: 612.7648, y: 646.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1449303900
 MonoBehaviour:
@@ -1070,11 +1070,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 22
+    m_FontSize: 24
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 2
-    m_MaxSize: 40
+    m_MinSize: 0
+    m_MaxSize: 54
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -1082,8 +1082,10 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "Ana Julia Monici Orbetelli\nGabriel Di Genova Nieto Losano\nGabriel Soares
-    de Camargo Munaro\nGuilherme Ferreira Galdino\nLeonardo Kenji Maeda Sill\n\n\n\n\nCena
-    1: Mischief Maker - Kevin MacLeod\r\nCena 2: River of Io - Kevin MacLeod\r"
+    de Camargo Munaro\nGuilherme Ferreira Galdino\nLeonardo Kenji Maeda Sill\n\nCena
+    1: Mischief Maker - Kevin MacLeod\r\nCena 2: River of Io - Kevin MacLeod\r\nVit\xF3ria:
+    Adventures in Adventureland - Kevin MacLeod\nDerrota: Beauty Flow - Kevn MacLeod\n\nInimigo
+    mais forte: https://www.spriters-resource.com/download/127301/\n"
 --- !u!222 &1449303901
 CanvasRenderer:
   m_ObjectHideFlags: 0
