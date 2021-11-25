@@ -6,6 +6,7 @@ public class ArredondaPosicao : CinemachineExtension
 {
     public float PixelsPerUnit = 32;
 
+	//Corrige a posição da câmera baseado na posição arredondada do jogador
     protected override void PostPipelineStageCallback(
         CinemachineVirtualCameraBase vcam, 
         CinemachineCore.Stage stage, 
@@ -19,7 +20,8 @@ public class ArredondaPosicao : CinemachineExtension
             state.PositionCorrection += pos2 - pos;
         } 
     }
-
+	
+	//Arredonda a posição do jogador considerando uma unidade de 32 píxeis
     float Round (float x)
     {
         return Mathf.Round(x * PixelsPerUnit) / PixelsPerUnit;

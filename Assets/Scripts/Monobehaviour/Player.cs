@@ -11,14 +11,19 @@ public class Player : Caractere
     HealthBar healthBar;
 
     public PontosDano pontosDano;           // tem o valor da "saúde" do objeto script
-    private void Start()
+    
+	//Assim que o script inicia, instancia um inventário para o jogador, define seus pontos de vida, instancia uma barra de vida para o jogador e associa
+	//este caractere à barra de vida criada
+	private void Start()
     {
         inventario = Instantiate(inventarioPrefab);
         pontosDano.valor = inicioPontosDano;
         healthBar = Instantiate(healthBarPrefab);
         healthBar.caractere = this;
     }
-    public override IEnumerator DanoCaractere(int dano, float intervalo)
+    
+	//Ao receber dano, inicia a corrotina FlickerCaractere e diminui a vida do jogador. Se a vida cair abaixo de 0, destrói o objeto e carrega a cena de GameOver.
+	public override IEnumerator DanoCaractere(int dano, float intervalo)
     {
         while(true)
         {
@@ -40,20 +45,28 @@ public class Player : Caractere
             }
         }
     }
-    public override void ResetCaractere()
+    
+	//Ao reiniciar o jogador, instancia um inventário para o jogador, define seus pontos de vida, instancia uma barra de vida para o jogador e associa
+	//este caractere à barra de vida criada
+	public override void ResetCaractere()
     {
         inventario = Instantiate(inventarioPrefab);
         healthBar = Instantiate(healthBarPrefab);
         healthBar.caractere = this;
         pontosDano.valor = inicioPontosDano;
     }
-    public override void KillCaractere()
+    
+	//Destrói o objeto jogador, a barra de vida e o inventário associados ao jogador
+	public override void KillCaractere()
     {
         base.KillCaractere();
         Destroy(healthBar.gameObject);
         Destroy(inventario.gameObject);
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+    
+	//Ao encostar em um item, verifica se é uma moeda ou um coração. Se for uma moeda, adiciona ao inventário. Se for um coração, cura a vida do personagem.
+	//Ao final, faz o item desaparecer se for o caso.
+	private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.CompareTag("Coletavel"))
         {
@@ -84,7 +97,9 @@ public class Player : Caractere
             }
         }
     }
-    public bool AjustePontosDano(int quantidade)
+    
+	//Caso os pontos de dano do personagem estejam menores que o máximo, soma uma quantidade a eles
+	public bool AjustePontosDano(int quantidade)
     {
         if (pontosDano.valor < MaxPontosDano)
         {

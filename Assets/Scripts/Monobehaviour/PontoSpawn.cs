@@ -9,6 +9,7 @@ public class PontoSpawn : MonoBehaviour
     public float intervaloRepeticao;
 
     // Start is called before the first frame update
+	//Assim que o script inicia, chama o método Spawn0 várias vezes em seguida
     public void Start()
     {
         if(intervaloRepeticao > 0)
@@ -17,6 +18,7 @@ public class PontoSpawn : MonoBehaviour
         }
     }
 
+	//Se não houver um prefab para spawn do jogador instanciado, inicia uma instância do prefab
     public GameObject SpawnO()
     {
         if(prefabParaSpawn != null)
