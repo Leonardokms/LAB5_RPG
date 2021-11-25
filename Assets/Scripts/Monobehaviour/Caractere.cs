@@ -11,6 +11,7 @@ public abstract class Caractere : MonoBehaviour
     public float MaxPontosDano;     // valor máxmo permitido de "saúde" do Player
     public abstract void ResetCaractere();
     
+	//Faz com que o caractere fique avermelhado por um décimo de segundo 
     public virtual IEnumerator FlickerCaractere()
     {
         GetComponent<SpriteRenderer>().color = Color.red;
@@ -18,8 +19,10 @@ public abstract class Caractere : MonoBehaviour
         GetComponent<SpriteRenderer>().color = Color.white;
 
     }
+	//Método que deve ser implementado pelo personagem
     public abstract IEnumerator DanoCaractere(int dano, float intervalo);
 
+	//Destrói o objeto quando este método é chamado
     public virtual void KillCaractere()
     {
         Destroy(gameObject);       

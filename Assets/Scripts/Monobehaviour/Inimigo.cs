@@ -14,11 +14,15 @@ public class Inimigo : Caractere
     {
         
     }
-    private void OnEnable()
+    
+	//Reinicia a vida do caractere ao habilitá-lo
+	private void OnEnable()
     {
         ResetCaractere();
     }
-    void OnCollisionEnter2D(Collision2D collision)
+    
+	//Ao colidir com o jogador, aplica dano chamando a corrotina DanoCaractere.
+	void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
@@ -29,7 +33,9 @@ public class Inimigo : Caractere
             }
         }
     }
-    void OnCollisionExit2D(Collision2D collision)
+    
+	//Finaliza a corrotina DanoCaractere quando para de colidir com o jogador
+	void OnCollisionExit2D(Collision2D collision)
     {
         if(collision.gameObject.CompareTag("Player"))
         {
@@ -40,6 +46,9 @@ public class Inimigo : Caractere
             }
         }
     }
+	
+	//Inicia a corrotina de mudança de cor quando o inimigo é danificado, e diminui o tanto necessário de pontos de vida, destruíndo o caractere caso
+	//a sua vida fique igual ou menor que zero. 
     public override IEnumerator DanoCaractere(int dano, float intervalo)
     {
         while (true)
@@ -61,7 +70,8 @@ public class Inimigo : Caractere
             }
         }
     }
-
+	
+	//Coloca a vida do inimigo de volta ao máximo
     public override void ResetCaractere()
     {
         pontosVida = inicioPontosDano;

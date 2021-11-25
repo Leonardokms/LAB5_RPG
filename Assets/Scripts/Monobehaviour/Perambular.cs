@@ -26,6 +26,7 @@ public class Perambular : MonoBehaviour
     CircleCollider2D circleCollider;                // Armazena o componente de Spot    
 
     // Start is called before the first frame update
+	//Recebe os componentes Animator, RigidBody2D e CircleCollider2D, define a velocidadeCorrente como a velocidadePerambular e inicia a Corrotina RotinaPerambular
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -35,6 +36,7 @@ public class Perambular : MonoBehaviour
         circleCollider = GetComponent<CircleCollider2D>();
     }
 
+	//Desenha uma esfera ao redor do caractere
     private void OnDrawGizmos()
     {
         if(circleCollider != null)
@@ -42,6 +44,8 @@ public class Perambular : MonoBehaviour
             Gizmos.DrawWireSphere(transform.position, circleCollider.radius);
         }
     }
+	
+	//Escolhe um novo ponto final e inicia a corrotina Mover para levar o caractere até este.
     public IEnumerator RotinaPerambular()
     {
         while(true)
@@ -56,20 +60,24 @@ public class Perambular : MonoBehaviour
             animator.SetBool("Caminhando", false);
         }
     }
-
+	
+	//Define aleatóriamente um ângulo para o qual o caractere andará
     void EscolheNovoPontoFinal()
     {        
         anguloAtual += Random.Range(0, 360);
         anguloAtual = Mathf.Repeat(anguloAtual, 360);
         posicaoFinal += Vector3ParaAngulo(anguloAtual);
     }
-
+	
+	//Converte um float de ângulo para um Vector3 representando o ângulo 
     Vector3 Vector3ParaAngulo(float anguloEntradaGraus)
     {
         float anguloEntradaGrausRadianos = anguloEntradaGraus * Mathf.Deg2Rad;
         return new Vector3(Mathf.Cos(anguloEntradaGrausRadianos), Mathf.Sin(anguloEntradaGrausRadianos), 0);
     }
-
+	
+	
+	//Enquanto a distância entre o caractere e a posição final for maior que 0, move o caractere na direção do ponto final
     public IEnumerator Mover(Rigidbody2D rbParaMover, float velocidade)
     {
         float distanciaFaltante = (transform.position - posicaoFinal).sqrMagnitude;
@@ -92,6 +100,7 @@ public class Perambular : MonoBehaviour
 
     }
 
+	//Se o jogador entrar no alcance da esfera desenhada anteriormente, faz com que o caractere persiga o jogador
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.CompareTag("Player") && perseguePlayer)
@@ -107,6 +116,7 @@ public class Perambular : MonoBehaviour
         }
     }
 
+	//Quando o jogador sai do alcance da esfera, para o movimento do caractere e reinicia o comportamento normal de perambular
     private void OnTriggerExit2D(Collider2D collision)
     {
         if(collision.gameObject.CompareTag("Player"))
@@ -120,7 +130,9 @@ public class Perambular : MonoBehaviour
             alvoTransform = null;
         }
     }
+	
     // Update is called once per frame
+	//Desenha uma linga para debug da posição atual do caractere até a posição final que o caractere está atualmente usando de referência
     void Update()
     {
         Debug.DrawLine(rb2D.position, posicaoFinal, Color.red);
