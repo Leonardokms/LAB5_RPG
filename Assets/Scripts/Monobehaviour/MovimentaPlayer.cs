@@ -23,6 +23,7 @@ public class MovimentaPlayer : MonoBehaviour
     */
 
     // Start is called before the first frame update
+	//Ao habilitar o script, busca os componentes Animator e RigidBody2D
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -30,15 +31,19 @@ public class MovimentaPlayer : MonoBehaviour
     }
 
     // Update is called once per frame
+	//Uma vez por frame, chama a função UpdateEstado
     void Update()
     {
         UpdateEstado();
     }
+	
+	//Chama a função MoveCaractere a cada FixedUpdate
     private void FixedUpdate()
     {
         MoveCaractere();
     }
 
+	//Define o vetor movimento recebendo o input dos eixos vertical e horizontal, normalizando o vetor resultante e multiplicando pela velocidade do jogador
     private void MoveCaractere()
     {
         Movimento.x = Input.GetAxisRaw("Horizontal");
@@ -46,6 +51,8 @@ public class MovimentaPlayer : MonoBehaviour
         Movimento.Normalize();
         rb2D.velocity = Movimento * VelocidadeMovimento;
     }
+	
+	//Atualiza o estado do jogador para detectar caso esteja andando ou não para o animador e qual a sua velocidade em cada direção
     void UpdateEstado()
     {
         if (Mathf.Approximately(Movimento.x, 0) && (Mathf.Approximately(Movimento.y, 0)))

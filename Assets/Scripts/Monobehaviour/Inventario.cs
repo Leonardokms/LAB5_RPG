@@ -10,11 +10,13 @@ public class Inventario : MonoBehaviour
     GameObject[] slots = new GameObject[numSlots]; // array de slots
 
     // Start is called before the first frame update
+	//Assim que o script inicia, chama o método CriaSlots;
     void Start()
     {
         CriaSlots();
     }
 
+	//Cria novos slots de inventário até um certo limite pré-definido
     public void CriaSlots()
     {
         if(slotPrefab != null)
@@ -29,7 +31,9 @@ public class Inventario : MonoBehaviour
             }
         }
     }
-
+	
+	//Verifica todos os slots do inventário; Caso o item a ser adicionado seja empilhável e já esteja presente no inventário, adiciona na quantidade do item
+	//naquele slot. Se não for empilhável ou não estiver presente no inventário, adiciona o item ao primeiro slot vazio que encontrar.	
     public bool AddItem(Item itemToAdd)
     {
         for(int i = 0; i<items.Length; i++)
