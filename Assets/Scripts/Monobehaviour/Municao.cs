@@ -2,11 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Define o dano de colisão da munição com inimigo
+/// </summary>
 public class Municao : MonoBehaviour
 {
-    public int danoCausado;                         // poder de dano da munição
+    public int danoCausado;        // poder de dano da munição
 	
-	//Ao colidir com um inimigo, aplica dano dele e desativa o objeto
+	/* Ao colidir com um inimigo, aplica dano dele e desativa o objeto */
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision is BoxCollider2D)
@@ -15,16 +18,5 @@ public class Municao : MonoBehaviour
             StartCoroutine(inimigo.DanoCaractere(danoCausado, 0.0f));
             gameObject.SetActive(false);
         }
-    }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

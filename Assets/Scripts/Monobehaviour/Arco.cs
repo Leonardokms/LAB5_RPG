@@ -1,8 +1,12 @@
 using System.Collections;
 using UnityEngine;
-
+/// <summary>
+/// Classe que define um arco para munição
+/// </summary>
 public class Arco : MonoBehaviour
 {
+    /* Define um arco de trajetória para a munição atirada, de forma que ela faz um arco entre o player e o destino (clique do mouse). 
+     * Além disso a trajetória tem uma duração fixa indepente da distância*/
     public IEnumerator arcoTrajetoria(Vector3 destino, float duracao)
     {
         var posicaoInicial = transform.position;

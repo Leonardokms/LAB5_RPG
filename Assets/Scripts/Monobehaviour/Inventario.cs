@@ -1,6 +1,9 @@
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Define inventário e informações do inventário do player, adicionando itens conforme definido
+/// </summary>
 public class Inventario : MonoBehaviour
 {
     public GameObject slotPrefab;               // objeto que recebe o prefab slot
@@ -10,13 +13,13 @@ public class Inventario : MonoBehaviour
     GameObject[] slots = new GameObject[numSlots]; // array de slots
 
     // Start is called before the first frame update
-	//Assim que o script inicia, chama o método CriaSlots;
+	/* Assim que o script inicia, chama o método CriaSlots. */
     void Start()
     {
         CriaSlots();
     }
 
-	//Cria novos slots de inventário até um certo limite pré-definido
+	/* Cria novos slots de inventário até um certo limite pré-definido */
     public void CriaSlots()
     {
         if(slotPrefab != null)
@@ -32,12 +35,12 @@ public class Inventario : MonoBehaviour
         }
     }
 	
-	//Verifica todos os slots do inventário; Caso o item a ser adicionado seja empilhável e já esteja presente no inventário, adiciona na quantidade do item
-	//naquele slot. Se não for empilhável ou não estiver presente no inventário, adiciona o item ao primeiro slot vazio que encontrar.	
+	/* Verifica todos os slots do inventário; Caso o item a ser adicionado seja empilhável e já esteja presente no inventário, adiciona na quantidade do item
+	 * naquele slot. Se não for empilhável ou não estiver presente no inventário, adiciona o item ao primeiro slot vazio que encontrar.	*/
     public bool AddItem(Item itemToAdd)
     {
         for(int i = 0; i<items.Length; i++)
-        {        
+        {
             if (items[i] != null && items[i].tipoItem == itemToAdd.tipoItem && itemToAdd.empilhavel == true)
             {
                 items[i].quantidade = items[i].quantidade + 1;

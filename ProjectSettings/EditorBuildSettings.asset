@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Lab5_Vitoria.unity
     guid: c482b49f5e43f7f41b0f06369398eaf1
+  - enabled: 1
+    path: Assets/Scenes/Lab5_CenaAdicional.unity
+    guid: 1d57a1c84a50e91438327e6878e0624d
   m_configObjects: {}

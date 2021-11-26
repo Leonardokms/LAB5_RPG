@@ -1,7 +1,9 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-//Armazena um texto
+/// <summary> 
+/// Armazena o texto de quantidade de itens no slot
+/// </summary>
 public class Slot : MonoBehaviour
 {
     public Text qtdTexto;

@@ -290,7 +290,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -327, y: -308.19824}
+  m_AnchoredPosition: {x: -203, y: -308.19824}
   m_SizeDelta: {x: 325.6195, y: 646.3966}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &135755624
@@ -326,7 +326,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Integrantes\n\n\n\n\n\nM\xFAsicas\n\n\n\n\nSprites"
+  m_Text: "Integrantes\n\n\n\n\n\nM\xFAsicas\n\n\n\n\n\nSprites"
 --- !u!222 &135755625
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -623,7 +623,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -41, y: -387}
+  m_AnchoredPosition: {x: -99, y: -387}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &754436171
@@ -1045,8 +1045,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 168.38, y: -308.2}
-  m_SizeDelta: {x: 612.7648, y: 646.4}
+  m_AnchoredPosition: {x: 223.8388, y: -308.2}
+  m_SizeDelta: {x: 475.6824, y: 646.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1449303900
 MonoBehaviour:
@@ -1085,7 +1085,7 @@ MonoBehaviour:
     de Camargo Munaro\nGuilherme Ferreira Galdino\nLeonardo Kenji Maeda Sill\n\nCena
     1: Mischief Maker - Kevin MacLeod\r\nCena 2: River of Io - Kevin MacLeod\r\nVit\xF3ria:
     Adventures in Adventureland - Kevin MacLeod\nDerrota: Beauty Flow - Kevn MacLeod\n\nInimigo
-    mais forte: https://www.spriters-resource.com/download/127301/\n"
+    mais forte: https://www.spriters-resource.com/download/127301/\nItens: https://vectorpixelstar.itch.io/mega-pixel-art-32x32-px-icons-sprite-sheet\n"
 --- !u!222 &1449303901
 CanvasRenderer:
   m_ObjectHideFlags: 0

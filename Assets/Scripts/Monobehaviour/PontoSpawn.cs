@@ -18,7 +18,7 @@ public class PontoSpawn : MonoBehaviour
         }
     }
 
-	//Se não houver um prefab para spawn do jogador instanciado, inicia uma instância do prefab
+	/* Se não houver um prefab para spawn do jogador instanciado, inicia uma instância do prefab */
     public GameObject SpawnO()
     {
         if(prefabParaSpawn != null)
@@ -26,11 +26,5 @@ public class PontoSpawn : MonoBehaviour
             return Instantiate(prefabParaSpawn, transform.position, Quaternion.identity);
         }
         return null;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

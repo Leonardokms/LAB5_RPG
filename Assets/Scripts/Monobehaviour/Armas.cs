@@ -2,6 +2,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Animator))]
+
+/// <summary>
+/// Define aspectos da arma do player como: munição utilizada, quantidade e velocidade de munição e cálculo para direção da animação de atirar
+/// </summary>
 public class Armas : MonoBehaviour
 {
     public GameObject municaoPrefab;                    // Armazena o prefab da munição
@@ -18,6 +22,7 @@ public class Armas : MonoBehaviour
     float slopePositivo;
     float slopeNegativo;
 
+    /* Define os quadrantes existentes */
     enum Quadrante
     {
         Leste,
@@ -26,6 +31,7 @@ public class Armas : MonoBehaviour
         Norte
     }
 
+    /* Define os vetores de posição de acordo com a tela e relaciona eles com valores de slope negativo e positivo para definir direção do "tiro" */
     private void Start()
     {
         animator = GetComponent<Animator>();
@@ -38,6 +44,7 @@ public class Armas : MonoBehaviour
         slopePositivo = PegaSlope(abaixoEsquerda, acimaDireita);
         slopeNegativo = PegaSlope(acimaEsquerda, abaixoDireita);
     }
+    /* Verifica se o clique foi acima do slope positivo */
     bool AcimaSlopePositivo(Vector2 posicaoEntrada)
     {
         Vector2 posicaoPlayer = gameObject.transform.position;
@@ -46,6 +53,7 @@ public class Armas : MonoBehaviour
         float entradaInterseccao = posicaoMouse.y - (slopePositivo * posicaoMouse.x);
         return entradaInterseccao > interseccaoY;
     }
+    /* Verifica se o clique foi acima do slope negativo */
     bool AcimaSlopeNegativo(Vector2 posicaoEntrada)  
     {
         Vector2 posicaoPlayer = gameObject.transform.position;
@@ -55,6 +63,7 @@ public class Armas : MonoBehaviour
         return entradaInterseccao > interseccaoY;
     }
 
+    /* Retorna o quadrante clicado */
     Quadrante PegaQuadrante()
     {
         Vector2 posicaoMouse = Input.mousePosition;
@@ -78,6 +87,7 @@ public class Armas : MonoBehaviour
             return Quadrante.Norte;          
         }
     }
+    /* Atualiza estado de animação do tiro */
     void UpdateEstado()
     {
         if(atirando)
@@ -114,6 +124,7 @@ public class Armas : MonoBehaviour
         }
     }
 
+    /* Instancia uma pool de munição */
     public void Awake()
     {
         if (municaoPiscina == null)
@@ -128,7 +139,7 @@ public class Armas : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
+    /* Verifica a cada frame se está atirando */
     private void Update()
     {
         if(Input.GetMouseButtonDown(0))
@@ -139,11 +150,13 @@ public class Armas : MonoBehaviour
         UpdateEstado();
     }
 
+    /* Retorna o valor entre dois vetores para definir o slope positivo e negativo */
     float PegaSlope(Vector2 ponto1, Vector2 ponto2)
     {
         return (ponto2.y - ponto1.y) / (ponto2.x - ponto1.x);
     }
 
+    /* Gera uma munição na tela quando existe espaço na pool e o player clica */
     public GameObject SpawnMunicao(Vector3 posicao)
     {
         foreach(GameObject municao in municaoPiscina)
@@ -158,6 +171,7 @@ public class Armas : MonoBehaviour
         return null;
     }
 
+    /* Dispara a munição utilizando a função SpawnMunicao e criando uma trajetória entre o ponto inicial e o local clicado*/
     void DisparaMunicao()
     {
         Vector3 posicaoMouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -169,7 +183,7 @@ public class Armas : MonoBehaviour
             StartCoroutine(ArcoScript.arcoTrajetoria(posicaoMouse, duracaoTrajetoria));
         }
     }
-
+    /* Torna a pool como null */
     private void OnDestroy()
     {
         municaoPiscina = null;
