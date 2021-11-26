@@ -326,7 +326,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Integrantes\n\n\n\n\n\nM\xFAsicas\n\n\n\n\n\nSprites"
+  m_Text: "Integrantes\n\n\n\n\n\n\nM\xFAsicas\n\n\n\n\n\n\nSprites"
 --- !u!222 &135755625
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1082,9 +1082,10 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "Ana Julia Monici Orbetelli\nGabriel Di Genova Nieto Losano\nGabriel Soares
-    de Camargo Munaro\nGuilherme Ferreira Galdino\nLeonardo Kenji Maeda Sill\n\nCena
-    1: Mischief Maker - Kevin MacLeod\r\nCena 2: River of Io - Kevin MacLeod\r\nVit\xF3ria:
-    Adventures in Adventureland - Kevin MacLeod\nDerrota: Beauty Flow - Kevn MacLeod\n\nInimigo
+    de Camargo Munaro\nGuilherme Ferreira Galdino\nIgor Sprovieri Pereira\nLeonardo
+    Kenji Maeda Sill\n\nCena 1: Mischief Maker - Kevin MacLeod\r\nCena 2: River of
+    Io - Kevin MacLeod\r\nVit\xF3ria: Adventures in Adventureland - Kevin MacLeod\nDerrota:
+    Beauty Flow - Kevin MacLeod\nCr\xE9ditos: Industrious Ferret - Kevin MacLeod\n\nInimigo
     mais forte: https://www.spriters-resource.com/download/127301/\nItens: https://vectorpixelstar.itch.io/mega-pixel-art-32x32-px-icons-sprite-sheet\n"
 --- !u!222 &1449303901
 CanvasRenderer:
@@ -1094,6 +1095,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1449303898}
   m_CullTransparentMesh: 1
+--- !u!1001 &1521506099
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5387162729478461497, guid: ce817745681323a46bfcd459d5fecdd3, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5387162729478461497, guid: ce817745681323a46bfcd459d5fecdd3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.6839068
+      objectReference: {fileID: 0}
+    - target: {fileID: 5387162729478461497, guid: ce817745681323a46bfcd459d5fecdd3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.7355411
+      objectReference: {fileID: 0}
+    - target: {fileID: 5387162729478461497, guid: ce817745681323a46bfcd459d5fecdd3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -171.39087
+      objectReference: {fileID: 0}
+    - target: {fileID: 5387162729478461497, guid: ce817745681323a46bfcd459d5fecdd3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5387162729478461497, guid: ce817745681323a46bfcd459d5fecdd3, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5387162729478461497, guid: ce817745681323a46bfcd459d5fecdd3, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5387162729478461497, guid: ce817745681323a46bfcd459d5fecdd3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5387162729478461497, guid: ce817745681323a46bfcd459d5fecdd3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5387162729478461497, guid: ce817745681323a46bfcd459d5fecdd3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5387162729478461497, guid: ce817745681323a46bfcd459d5fecdd3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7623905983787635654, guid: ce817745681323a46bfcd459d5fecdd3, type: 3}
+      propertyPath: m_Name
+      value: MusicManagerCreditos
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ce817745681323a46bfcd459d5fecdd3, type: 3}
 --- !u!1 &1942842929
 GameObject:
   m_ObjectHideFlags: 0

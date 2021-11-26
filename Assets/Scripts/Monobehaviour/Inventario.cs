@@ -56,6 +56,10 @@ public class Inventario : MonoBehaviour
                 items[i].quantidade = 1;
                 itemImagens[i].sprite = itemToAdd.sprite;
                 itemImagens[i].enabled = true;
+                Slot slotScript = slots[i].gameObject.GetComponent<Slot>();
+                Text quantidadeTexto = slotScript.qtdTexto;
+                quantidadeTexto.enabled = true;
+                quantidadeTexto.text = items[i].quantidade.ToString();
                 return true;
             }
         }
